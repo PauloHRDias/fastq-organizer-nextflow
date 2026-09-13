@@ -1,0 +1,9 @@
+# Nextflow
+work/
+.nextflow/
+.nextflow.log*
+# Output
+output/
+# OS
+.DS_Store
+Thumbs.db
