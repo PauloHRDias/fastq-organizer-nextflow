@@ -1,6 +1,7 @@
 # FASTQ Organizer — Nextflow Pipeline
 
-A simple [Nextflow](https://nextflow.io/) pipeline that organizes paired-end FASTQ files by sample, automatically grouping `_R1` and `_R2` files into per-sample directories.
+A simple [Nextflow](https://nextflow.io/) pipeline that organizes paired-end FASTQ files by sample, 
+automatically grouping `_R1` and `_R2` files into per-sample directories and generating a summary plot with R
 
 ## 🎯 Purpose
 
@@ -9,27 +10,28 @@ This pipeline demonstrates:
 - Handling file grouping logic in Groovy
 - Running pipelines in a Linux/WSL environment
 - Version control with Git
+- Generates a summary bar plot with R
+- Publishes results to a clean `output/` directory
 
 ## 📁 Project structure
 fastq-organizer-nextflow/
 ├── main.nf # Main Nextflow pipeline
 ├── nextflow.config # Pipeline configuration
 ├── bin/
-│ └── organize.sh # Bash script (documentation/reference)
-├── data/ # Input FASTQ files (test data)
-│ ├── sample1_R1.fastq
-│ ├── sample1_R2.fastq
-│ ├── sample2_R1.fastq
-│ └── sample2_R2.fastq
-└── output/ # Generated output (per-sample folders)
-
-text
+│ ├── organize.sh # Bash script (reference)
+│ └── plot_summary.R # R script for summary plot
+├── data/ # Input FASTQ files
+└── output/ # Generated results
+├── sample1/
+├── sample2/
+└── summary.png
 
 ## 🚀 How to run
 
 ### Prerequisites
 - Nextflow (v24+)
 - Java 17+
+- R (with base graphics)
 - Linux / macOS / WSL
 
 ### Run the pipeline
@@ -51,13 +53,17 @@ output/
 ├── sample1/
 │   ├── sample1_R1.fastq
 │   └── sample1_R2.fastq
-└── sample2/
-    ├── sample2_R1.fastq
-    └── sample2_R2.fastq
+├── sample2/
+│   ├── sample2_R1.fastq
+│   └── sample2_R2.fastq
+└── summary.png
+
 🛠️ Technologies used
 Nextflow — workflow orchestration
 
 Groovy — pipeline scripting
+
+R — data visualization
 
 Bash — file handling
 
