@@ -16,14 +16,23 @@ This pipeline demonstrates:
 ## 📁 Project structure
 fastq-organizer-nextflow/
 ├── main.nf # Main Nextflow pipeline
+
 ├── nextflow.config # Pipeline configuration
+
 ├── bin/
+
 │ ├── organize.sh # Bash script (reference)
+
 │ └── plot_summary.R # R script for summary plot
+
 ├── data/ # Input FASTQ files
+
 └── output/ # Generated results
+
 ├── sample1/
+
 ├── sample2/
+
 └── summary.png
 
 ## 🚀 How to run
